@@ -18,9 +18,10 @@ class apiGenerator {
     return articleeverything;
   }
   //https://newsapi.org/v2/top-headlines/sources?apiKey=d369fc7cd4e34bb9a4d2c2b6e8a0766e
-  static Future<sourceResponse> getSources()async{
+  static Future<sourceResponse> getSources(String id)async{
     Uri URL=Uri.https(baseurl,'/v2/top-headlines/sources',{
       "apiKey":apikey,
+      "category":id,
     } );
     Response sources=await http.get(URL);
   var json= jsonDecode(sources.body);

@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:news_shehab/models/categorymodel.dart';
 import 'package:news_shehab/modules/HomeCategory/tabOne.dart';
 import 'package:news_shehab/shared/network/remote/api.dart';
 import '../../models/sources.dart';
 
 
 class HomeOfCategory extends StatelessWidget {
-
+category categories;
+HomeOfCategory(this.categories);
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<sourceResponse>(
-      future:apiGenerator.getSources(),
+      future:apiGenerator.getSources(categories.id??''),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(

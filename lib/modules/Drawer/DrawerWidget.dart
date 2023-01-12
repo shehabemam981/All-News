@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:news_shehab/modules/Setting/setting.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../../models/categorymodel.dart';
 class DrawerWidget extends StatelessWidget {
-  const DrawerWidget({Key? key}) : super(key: key);
+  Function callBack;
+  DrawerWidget(this.callBack);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +20,11 @@ class DrawerWidget extends StatelessWidget {
           SizedBox(
             height: 40,
           ),
-          Text(AppLocalizations.of(context)!.category,style: Theme.of(context).textTheme.headline1,),
+          InkWell(
+               onTap: (){
+                 callBack();
+               },
+              child: Text(AppLocalizations.of(context)!.category,style: Theme.of(context).textTheme.headline1,)),
           SizedBox(
             height: 10,
           ),

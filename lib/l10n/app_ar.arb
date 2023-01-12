@@ -5,6 +5,14 @@
 "setting":"الضبط",
 "language":"لغات",
 "arabic":"عربي",
-"category":"الفنات"
+"category":"الفنات",
+"pick":"اختار الفئه المهتم بها",
+"sports":"الرياضه",
+    "enter":"الترفيه",
+    "general":"عامه",
+    "business":"الاقتصاد",
+    "science":"العلوم",
+    "health":"الصحه",
+    "techno":"تكنولوجيا"
 
 }

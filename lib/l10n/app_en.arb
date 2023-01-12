@@ -5,6 +5,14 @@
     "setting":"Setting",
     "language":"language",
     "arabic":"arabic",
-    "category":"Category"
+    "category":"Category",
+    "pick":"Pick your category of interests",
+    "sports":"sports",
+    "enter":"Entertainment",
+    "general":"General",
+    "business":"business",
+    "science":"science",
+    "health":"health",
+    "techno":"Technology"
 
 }
