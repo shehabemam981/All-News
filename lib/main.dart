@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:news_shehab/Provider/myprovider.dart';
 import 'package:news_shehab/layout/homeScreen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:news_shehab/modules/HomeCategory/searchscreen.dart';
 import 'package:news_shehab/modules/Setting/setting.dart';
+import 'package:news_shehab/modules/detailsScreen.dart';
 import 'package:news_shehab/shared/styles/themes.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -15,6 +17,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     var pro=Provider.of<myprovider>(context);
@@ -35,6 +38,8 @@ class MyApp extends StatelessWidget {
       routes: {
         Setting.routeName:(c)=>Setting(),
         HomeScreen.RouteName:(c)=>HomeScreen(),
+        detailsScreen.routeName:(c)=>detailsScreen(),
+        searchscreen.routename:(c)=>searchscreen(),
       },
       initialRoute: HomeScreen.RouteName,
       theme: mythemedata.lightTheme,

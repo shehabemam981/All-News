@@ -8,10 +8,10 @@ import '../../../models/sources.dart';
 
 class apiGenerator {
   //https://newsapi.org/v2/everything?sources=abc-news-au&apiKey=d369fc7cd4e34bb9a4d2c2b6e8a0766e
-  static Future<EveryThing> getEveryThing(String id) async {
+  static Future<EveryThing> getEveryThing({String id="",String query=""}) async {
     Uri URL = Uri.https(baseurl,
          "/v2/everything",
-         {"sources": id, "apikey": apikey});
+         {"sources": id, "apikey": apikey,"q":query});
     Response everything = await http.get(URL);
     var json = jsonDecode(everything.body);
     EveryThing articleeverything = EveryThing.fromJson(json);

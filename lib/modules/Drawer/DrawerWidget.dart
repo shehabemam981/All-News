@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news_shehab/modules/Setting/setting.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../../models/categorymodel.dart';
+
 class DrawerWidget extends StatelessWidget {
   Function callBack;
   DrawerWidget(this.callBack);
@@ -11,6 +11,7 @@ class DrawerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Drawer(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             height: 200,
@@ -24,15 +25,33 @@ class DrawerWidget extends StatelessWidget {
                onTap: (){
                  callBack();
                },
-              child: Text(AppLocalizations.of(context)!.category,style: Theme.of(context).textTheme.headline1,)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.menu),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(AppLocalizations.of(context)!.category,style: Theme.of(context).textTheme.headline1,),
+                ],
+              )),
           SizedBox(
-            height: 10,
+            height: 40,
           ),
           InkWell(
             onTap: (){
               Navigator.pushNamed(context, Setting.routeName);
             },
-              child: Text(AppLocalizations.of(context)!.setting,style: Theme.of(context).textTheme.headline1,)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.settings),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(AppLocalizations.of(context)!.setting,style: Theme.of(context).textTheme.headline1,),
+                ],
+              )),
         ],
       ),
     );
